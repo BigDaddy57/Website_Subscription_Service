@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="signup-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded" data-aos="fade-up" data-aos-duration="1000">
+          <div class="card-body">
+            <h2 class="card-title text-center">Sign up</h2>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Sign up</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .signup-section {
+    background-color: var(--light-color);
+    padding: 100px 0;
+  }
+
+  .signup-section .card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .signup-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .signup-section .card-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+
+  .signup-section form {
+    margin-top: 30px;
+  }
+
+  .signup-section .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .signup-section .btn-primary:hover {
+    background-color: var(--secondary-color);
+  }
+</style>
+{% endblock %}

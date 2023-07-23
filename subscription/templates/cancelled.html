@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="cancel-subscription">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Cancel Subscription</h2>
+        <p class="card-text">We're sorry to see you go. Are you sure you want to cancel your subscription? This action cannot be undone.</p>
+
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+
+        <form method="post" action="{% url 'cancelled' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="reason">If you don't mind, could you please tell us why you're cancelling?</label>
+            <textarea class="form-control" id="reason" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger">Yes, cancel my subscription</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

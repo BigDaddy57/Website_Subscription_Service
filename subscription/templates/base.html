@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <title>Weekly Investment Ideas: Top 5 Stocks</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="description" content="Weekly Investment Ideas provides top stock market insights and learning resources to help you unlock your investment potential.">
+    <meta name="keywords" content="Investment, Stocks, Stock Market, Learning Resources, Weekly Insights">
+    <style>
+        :root {
+            --primary-color: #007BFF; /* Bright Blue */
+            --secondary-color: #FFA500; /* Orange */
+            --light-color: #FFFFFF; /* White */
+            --dark-color: #000000; /* Black */
+            --card-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            --card-hover-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+            --transition-speed: 0.3s;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px; /* Set the base font size */
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6; /* Add this line to increase the line height of all text */
+            padding: 0 20px; /* Add this line to add horizontal padding to the body */
+        }
+        .container {
+            max-width: 1200px; /* Add this line to limit the maximum width of the container */
+            margin: 0 auto; /* Add this line to center the container */
+            padding: 20px; /* Add this line to add padding to the container */
+        }
+        /* Add this rule to increase the vertical margin of all sections */
+        section {
+            margin: 40px 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary-color);
+            font-weight: 700; /* Make headings bold */
+            line-height: 1.2; /* Tighten line-height for headings */
+        }
+        h1 {
+            font-size: 2.5em; /* Adjust heading sizes */
+        }
+        h2 {
+            font-size: 2em;
+        }
+        h3 {
+            font-size: 1.75em;
+        }
+        h4 {
+            font-size: 1.5em;
+        }
+        h5 {
+            font-size: 1.25em;
+        }
+        h6 {
+            font-size: 1em;
+        }
+        p {
+            font-size: 1em; /* Set paragraph text size */
+            line-height: 1.6; /* Set paragraph line height */
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden; /* Add this line to apply the border radius to the card's content */
+            background-color: var(--light-color);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 16px;
+            color: var(--dark-color);
+        }        
+       @keyframes headerAnimation {
+            0% { opacity: 0; transform: translateY(-40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .header-content {
+            animation: headerAnimation 2s ease-out forwards;
+        }
+        .header-content h1,
+        .header-content p {
+            color: white;
+        }
+        .cta-button, .subscribe-button {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: none;
+            font-size: 20px;
+            padding: 15px 30px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover, .subscribe-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+        }
+        .subscribe-button {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            border: none;
+            font-size: 20px;
+            padding: 15px 30px;
+            transition: transform 0.3s, box-shadow 0.3s; /* Adjust transition */
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        }
+        .subscribe-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            transform: scale(1.1) translateZ(0); /* Adjust scale */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adjust box-shadow */
+        }                       
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            position: fixed;
+            width: 100%;
+            background-color: var(--light-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+        }
+        .navigation a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark-color);
+            transition: color 0.3s ease;
+        }
+        .navigation a:hover {
+            color: var(--primary-color);
+        }
+        .navbar {
+            animation: navbarAnimation 2s ease-out forwards;
+            background-color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 15px 15px;
+            transition: all 0.3s ease;
+            padding: 0px 0; /* Adjust this line to change the size of the navbar */
+        }        
+        .navbar a {
+            color: var(--light-color);
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 17px; /* Adjust this line to change the font size of the navbar links */
+        }
+        .navbar a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+        .navbar a.active {
+            text-decoration: underline;
+        }        
+        .nav-item.active .nav-link {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }        
+        /* Add this for the animation */
+        @keyframes navbarAnimation {
+            0% { opacity: 0; transform: translateY(-40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }    
+        .dropdown-menu {
+            background-color: var(--primary-color); /* Change the background color of the dropdown menu */
+        }
+        
+        .dropdown-item {
+            color: var(--light-color); /* Change the color of the dropdown items */
+        }
+        
+        .dropdown-item:hover {
+            color: var(--secondary-color); /* Change the color of the dropdown items on hover */
+            background-color: var(--light-color); /* Change the background color of the dropdown items on hover */
+        }
+        .mission-statement {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Adjusted box-shadow for 3D effect */
+            transition: transform 0.3s, box-shadow 0.3s; /* Added transition for smooth effect */
+        }
+        
+        .mission-statement:hover {
+            transform: translateY(-10px); /* Added hover effect to lift the box */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Adjusted box-shadow on hover for more depth */
+        }        
+        footer {
+            background-color: transparent;
+            color: var(--dark-color);
+        }
+        footer h5 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        footer p {
+            color: var(--dark-color);
+        }
+        .social-media-links a {
+            color: var(--primary-color); /* Change this to a color that is visible on a white background */
+            margin-right: 15px;
+        }
+        .social-media-links a:hover {
+            color: var(--secondary-color); /* Change this to a different color for the hover effect */
+        }                
+        .input-group {
+            max-width: 300px;
+            margin-top: 10px;
+        } 
+        .social-media-links i {
+            color: var(--primary-color); /* Change this to a color that is visible on a white background */
+        }
+        .social-media-links i:hover {
+            color: var(--secondary-color); /* Change this to a different color for the hover effect */
+        }        
+        .feature-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform: perspective(1px) translateZ(0);
+            backface-visibility: hidden;
+        }
+        .feature-box:hover {
+            transform: scale(1.05) translateZ(0);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .feature-box-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }        
+        .feature-box-icon:hover {
+            transform: rotate(360deg);
+        }
+        .feature-box-title {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .feature-box-title:hover {
+            color: var(--primary-color);
+        }
+        .feature-box-description {
+            color: #6c757d;
+            transition: color 0.3s;
+        }
+        .feature-box-description:hover {
+            color: var(--primary-color);
+        }            
+        .testimonial {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform: perspective(1px) translateZ(0);
+            backface-visibility: hidden;
+        }
+        .testimonial:hover {
+            transform: scale(1.05) translateZ(0);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .join-community {
+            background-color: white;
+            color: darkgray;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .subscribe-section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform: perspective(1px) translateZ(0);
+            backface-visibility: hidden;
+        }
+        .subscribe-section:hover {
+            transform: scale(1.05) translateZ(0);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }                
+        .subscribe-title {
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .subscribe-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }         
+        .resource-item {
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+        }
+        .resource-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        .resource-link {
+            color: var(--dark-color);
+            transition: color var(--transition-speed);
+        }
+        .resource-link:hover {
+            color: var(--primary-color);
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed); /* Add transform and box-shadow */
+        }
+        .btn-primary:hover {
+            color: var(--light-color);
+        }
+          .cancel-subscription {
+            background-color: var(--light-color);
+            padding: 100px 0;
+          }
+          .cancel-subscription .card {
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+          }
+          .cancel-subscription .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+          }
+          .cancel-subscription .card-title {
+            font-size:30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+          }
+          .cancel-subscription .card-text {
+            font-size: 18px;
+            color: var(--dark-color);
+          }
+          .cancel-subscription form {
+            margin-top: 30px;
+          }
+          .cancel-subscription .btn-danger {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+          }
+          .cancel-subscription .btn-danger:hover {
+            background-color: var(--secondary-color);
+          }          
+          .learning-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+          }
+          
+          .learning-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        .learning-section .card {
+            border: none;
+            border-radius: 15px; /* Add rounded corners */
+            box-shadow: var(--card-shadow);
+            transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+        }
+        .learning-section .card:hover {
+            transform: translateY(-10px); /* Increase the amount of upward movement on hover */
+            box-shadow: var(--card-hover-shadow);
+        }
+        .learning-section .card-title {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color); /* Change color to primary color */
+        }        
+          #container {
+            perspective: 1000px;
+          }          
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--primary-color);">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">Investing Society</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item {% if request.resolver_match.url_name == 'checkout' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'checkout' %}">Subscribe</a>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'comment_view' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'comment_view' %}">Comments</a>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'learning_resources' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'learning_resources' %}">Learning Resources</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item {% if request.resolver_match.url_name == 'signup' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    {% if user.is_authenticated %}
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown ms-auto">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <!-- This is the user icon -->
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'cancelled' %}">Cancel Subscription</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>                                                        
+        <div class="header-content text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXV3aDhobzl2ZmJwdnB0ajdnM2FidmFmbWM4NHFiYXlmOW9jMzVreCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JtBZm3Getg3dqxK0zP/giphy-downsized-large.gif') no-repeat center center; background-size: cover;">
+            <div class="container text-center header-content">
+                <h1 class="mt-5">Unlock Your Investment Potential</h1>
+                <p class="lead">Join our community and gain exclusive access to top stock market insights.</p>
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'signup' %}" class="btn btn-primary btn-lg cta-button">Sign Up Now</a> <!-- Call to action button -->
+                {% endif %}
+            </div>
+        </div>        
+    </header>       
+    <main class="mb-4">
+        <div class="container">
+            {% block content %}
+            <div class="mission-statement card mb-5">
+                <div class="card-body py-4">
+                    <h2>Our Mission</h2>
+                    <p>At Investing Society, I believe in the power of financial freedom to transform lives. My mission is to empower you with the knowledge and tools you need to take control of your financial future and live life on your own terms.</p>
+                    <p>I, the founder: Mohamad Chokr, know firsthand the challenges of financial struggle. Having faced these challenges myself, I am passionate about helping others navigate their own financial journeys. My goal is to make financial freedom accessible to everyone, regardless of their background or circumstances.</p>
+                    <p>this is not just a business - we're a community of individuals committed to supporting each other on the path to financial freedom. I'm here to help you understand investing, make informed decisions, and ultimately, enjoy life a little more. Because I believe that when you're financially free, you're free to live the life you've always dreamed of.</p>
+                    <p>Join us on this journey. Let's achieve financial freedom together.</p>
+                </div>
+            </div>
+        
+            <div class="row mb-5">
+                <div class="col-lg-4">
+                    <div class="feature-box text-center p-4">
+                        <span class="feature-box-icon">&#128200;</span>
+                        <h3 class="feature-box-title">Cutting-Edge Investment Ideas</h3>
+                        <p class="feature-box-description">Stay ahead of the market withour curated collection of cutting-edge investment ideas. We analyze market trends and provide you with valuable insights to make informed investment decisions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-box text-center p-4">
+                        <span class="feature-box-icon">&#128176;</span>
+                        <h3 class="feature-box-title">In-Depth Market Analysis</h3>
+                        <p class="feature-box-description">Our team of experts provide in-depth analysis of the market, helping you understand the dynamics and trends that drive the market.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                 <div class="feature-box text-center p-4">
+                        <span class="feature-box-icon">&#128218;</span>
+                        <h3 class="feature-box-title">Comprehensive Learning Resources</h3>
+                        <p class="feature-box-description">We provide a wide range of learning resources to help you understand the basics of investing and develop your skills.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial card">
+                <p class="testimonial-text">"I've been a member of [Your Business Name] for over a year now, and I can honestly say it's been the best investment I've ever made. The investment ideas are top-notch, the market analysis is spot-on, and the learning resources are invaluable. I've learned so much and my portfolio has never looked better. Thank you, [Your Business Name]!"</p>
+                <p class="testimonial-author">- John Doe</p>
+            </div>
+            
+            <section class="subscribe-section card">
+                <div class="container">
+                    <h2 class="subscribe-title">Unlock Your Investment Potential Today!</h2>
+                    <h2>Join Our Community</h2>
+                    <p>Join our community of investors and get access to exclusive content, expert advice, and a supportive community. Sign up now to start your journey towards financial freedom.</p>
+                    <p class="subscribe-description">Subscribe now to gain exclusive access to our premium content and take your investment game to the next level.</p>
+                    {% if not user.is_authenticated %}
+                        <a href="{% url 'signup' %}" class="btn btn-primary btn-lg subscribe-button">Sign Up Now</a>
+                    {% else %}
+                        <a href="{% url 'checkout' %}" class="btn btn-primary btn-lg subscribe-button">Subscribe Now</a>
+                    {% endif %}
+                </div>
+            {% endblock %}
+        </div>
+    </main>
+    <footer>
+        <div class="container py-5 d-flex flex-column justify-content-between">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:createandevolvellc0@gmail.com">createandevolvellc0@gmail.com</a></p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-end mt-5">
+                <div class="social-media-links">
+                    <a href="https://twitter.com/Mohamad07770"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/createandevolvellc_/"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>&copy; 2023 Weekly Investment Ideas. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>                
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('left-arrow').addEventListener('click', function() {
+          document.getElementById('practice-section').style.transform = 'rotateY(0deg)';
+          document.getElementById('resources-section').style.transform = 'rotateY(-180deg)';
+        });
+        
+        document.getElementById('right-arrow').addEventListener('click', function() {
+          document.getElementById('practice-section').style.transform = 'rotateY(180deg)';
+          document.getElementById('resources-section').style.transform = 'rotateY(0deg)';
+        });
+    </script>        
+</body>
+</html>
