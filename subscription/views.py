@@ -71,7 +71,7 @@ def create_checkout_session(request):
         # Create new Checkout Session for the order
         checkout_session = stripe.checkout.Session.create(
             success_url=domain_url + reverse('success'),
-            cancel_url=domain_url + reverse('cancelled'),
+            cancel_url=domain_url + reverse('return_to_checkout'),
             payment_method_types=['card'],
             mode='subscription',
             line_items=[
@@ -85,6 +85,11 @@ def create_checkout_session(request):
     except Exception as e:
         print(e)  # print the exception message
         return HttpResponse(str(e), status=403)
+
+@login_required
+def return_to_checkout(request):
+    # Redirect to the checkout page
+    return redirect('checkout')
 
 @login_required
 def success(request):

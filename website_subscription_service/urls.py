@@ -32,6 +32,7 @@ urlpatterns = [
     path('accounts/login/', login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('checkout/', views.create_checkout_session, name='checkout'),
+    path('return_to_checkout/', views.return_to_checkout, name='return_to_checkout'),
     path('success/', views.success, name='success'),
     path('cancelled/', views.cancelled, name='cancelled'),
     path('comments/', views.comment_view, name='comment_view'),
