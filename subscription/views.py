@@ -64,7 +64,7 @@ def logout_view(request):
 
 @login_required
 def create_checkout_session(request):
-    domain_url = 'https://investingsociety.net/'  # replace with your domain
+    domain_url = 'https://investingsociety.net'  # replace with your domain
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     try:
