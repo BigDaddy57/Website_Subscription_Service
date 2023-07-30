@@ -8,34 +8,31 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="description" content="Unlock your investment potential with Weekly Investment Ideas. Gain exclusive access to top stock market insights and comprehensive learning resources.">
     <meta name="keywords" content="Investment Ideas, Stock Market Insights, Investment Learning Resources">
     <style>
         body {
-            /* Set the logo as the background image of the body */
-            background: url('Website_subscription_logo_3D.aep') no-repeat center center fixed; 
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
             font-family: 'Roboto', sans-serif;
             color: var(--dark-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
         }
-        /* Add this media query for mobile devices */
-        @media screen and (max-width: 768px) {
-            body {
-                -webkit-background-size: 100% 100%;
-                -moz-background-size: 100% 100%;
-                -o-background-size: 100% 100%;
-                background-size: 100% 100%;
-            }
+        .logo {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
         }
         .login-signup-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
         }
-    </style>    
+    </style>
 </head>
 <body>
     <header>
@@ -45,6 +42,7 @@
             </div>
         </nav>
     </header>
+    <img src="Website_subscription_logo_3D.aep" alt="Logo" class="logo">
     <div class="login-signup-button">
         <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Join Now / Login</a>
     </div>
