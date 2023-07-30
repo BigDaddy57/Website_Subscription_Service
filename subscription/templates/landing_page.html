@@ -13,26 +13,30 @@
     <meta name="keywords" content="Investment Ideas, Stock Market Insights, Investment Learning Resources">
     <style>
         body {
+            /* Set the logo as the background image of the body */
+            background: url('Website_Subscription_Logo_3d.gif') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             font-family: 'Roboto', sans-serif;
             color: var(--dark-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f3f3f3;
         }
-        .logo {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
+        /* Add this media query for mobile devices */
+        @media screen and (max-width: 768px) {
+            body {
+                -webkit-background-size: 100% 100%;
+                -moz-background-size: 100% 100%;
+                -o-background-size: 100% 100%;
+                background-size: 100% 100%;
+            }
         }
         .login-signup-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
         }
-    </style>
+    </style>    
 </head>
 <body>
     <header>
