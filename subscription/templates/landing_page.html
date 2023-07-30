@@ -13,23 +13,14 @@
     <meta name="keywords" content="Investment Ideas, Stock Market Insights, Investment Learning Resources">
     <style>
         body {
-            /* Set the GIF as the background image of the body */
-            background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGE3YTZqcXFmMjl3ZzE4bjJ3N2x3cmZrZTUwMXcxbnkxNHk3bWx2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IVPKtoFABf1gUPZkm9/giphy.gif') no-repeat center center fixed; 
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
             font-family: 'Roboto', sans-serif;
             color: var(--dark-color);
-        }
-        /* Add this media query for mobile devices */
-        @media screen and (max-width: 768px) {
-            body {
-                -webkit-background-size: 100% 100%;
-                -moz-background-size: 100% 100%;
-                -o-background-size: 100% 100%;
-                background-size: 100% 100%;
-                    }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa; /* You can change this to any color you want */
         }
         .login-signup-button {
             position: fixed;
@@ -46,6 +37,10 @@
             </div>
         </nav>
     </header>
+    <video autoplay loop muted playsinline>
+        <source src="{% static 'Website_Subscription_Logo_3d.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div class="login-signup-button">
         <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Join Now / Login</a>
     </div>
