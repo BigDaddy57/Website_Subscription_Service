@@ -12,21 +12,7 @@
     <meta name="description" content="Unlock your investment potential with Weekly Investment Ideas. Gain exclusive access to top stock market insights and comprehensive learning resources.">
     <meta name="keywords" content="Investment Ideas, Stock Market Insights, Investment Learning Resources">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--dark-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa; /* You can change this to any color you want */
-        }
-        .login-signup-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
+        /* Add your CSS here */
     </style>
 </head>
 <body>
@@ -38,9 +24,17 @@
             </div>
         </nav>
     </header>
-    <img src="{% static 'Website_Logo.png' %}" alt="Logo">
-    <div class="login-signup-button">
-        <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Join Now / Login</a>
-    </div>
+    <main class="container text-center">
+        <img src="{% static 'Website_Logo.png' %}" alt="Logo">
+        <h1>Unlock your investment potential</h1>
+        <p>Gain exclusive access to top stock market insights and comprehensive learning resources.</p>
+        <div class="mt-4">
+            <a href="{% url 'signup' %}" class="btn btn-primary btn-lg mr-2">Join Now</a>
+            <a href="{% url 'login' %}" class="btn btn-secondary btn-lg">Login</a>
+        </div>
+    </main>
+    <footer>
+        <!-- Add your footer here -->
+    </footer>
 </body>
 </html>
