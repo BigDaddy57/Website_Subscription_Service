@@ -13,14 +13,14 @@
     <meta name="keywords" content="Investment Ideas, Stock Market Insights, Investment Learning Resources">
     <style>
         body {
+            /* Set the GIF as the background image of the body */
+            background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGE3YTZqcXFmMjl3ZzE4bjJ3N2x3cmZrZTUwMXcxbnkxNHk3bWx2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IVPKtoFABf1gUPZkm9/giphy.gif') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
             font-family: 'Roboto', sans-serif;
             color: var(--dark-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa; /* You can change this to any color you want */
         }
         .login-signup-button {
             position: fixed;
@@ -30,7 +30,6 @@
     </style>
 </head>
 <body>
-    {% load static %}
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: var(--primary-color);">
             <div class="container">
@@ -38,7 +37,6 @@
             </div>
         </nav>
     </header>
-    <img src="{% static 'Website_Logo.png' %}" alt="Logo">
     <div class="login-signup-button">
         <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Join Now / Login</a>
     </div>
