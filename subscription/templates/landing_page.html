@@ -50,9 +50,9 @@
             </div>
         </nav>
     </header>
-    <video autoplay loop muted class="logo-video">
-        <source src="{% static 'videos/Website_Subscription_Logo_3D_Comp.mp4' %}" type="video/mp4">
-    </video>
+    <video autoplay loop muted playsinline class="logo-video">
+        <source src=" {% static 'videos/Website_Subscription_Logo_3D_Comp.mp4' %} " type="video/mp4">
+    </video>    
     <div class="login-signup-button">
         <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Join Now</a>
         <a href="{% url 'login' %}" class="btn btn-secondary btn-lg">Login</a>
