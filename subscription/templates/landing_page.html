@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>    
@@ -13,18 +14,31 @@
     <meta name="keywords" content="Investment Ideas, Stock Market Insights, Investment Learning Resources">
     <style>
         body {
-            background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGE3YTZqcXFmMjl3ZzE4bjJ3N2x3cmZrZTUwMXcxbnkxNHk3bWx2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IVPKtoFABf1gUPZkm9/giphy.gif') no-repeat center center fixed; 
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
             font-family: 'Roboto', sans-serif;
             color: var(--dark-color);
+            background-color: black;
         }
         .login-signup-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
+        }
+        .logo-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 70%;
+            height: 70%;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+            transition: 1s opacity;
+        }
+        @media screen and (max-width: 768px) {
+            .logo-video {
+                width: 100%;
+                height: 100%;
+            }
         }
     </style>
 </head>
@@ -36,6 +50,9 @@
             </div>
         </nav>
     </header>
+    <video autoplay loop muted class="logo-video">
+        <source src="{% static 'videos/Website_Subscription_Logo_3D_Comp.mp4' %}" type="video/mp4">
+    </video>
     <div class="login-signup-button">
         <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Join Now</a>
         <a href="{% url 'login' %}" class="btn btn-secondary btn-lg">Login</a>
