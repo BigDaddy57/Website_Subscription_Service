@@ -132,30 +132,30 @@
 
     /* Landscape mode adjustments */
     @media screen and (max-width: 768px) and (orientation: landscape) {
-        body {
-            overflow-y: auto; /* Allow vertical scrolling */
-        }
-        .logo-video {
-            position: relative; /* Reset to default positioning */
-            width: 60%; /* Further reduce width to fit within viewport */
-            height: auto;
-            top: 5%; /* Provide some top spacing */
-            left: 20%; /* Center the video */
-            transform: none; /* Remove transformations */
-        }
-        .login-signup-button {
-            top: auto; /* Reset to default positioning */
-            bottom: 10%; /* Position buttons further down, closer to the footer */
-        }
-        footer {
-            position: relative; /* Reset to default positioning */
-            background-color: rgba(0, 0, 0, 0.8); /* Make the footer slightly more opaque */
-        }
-}
-
-}
-
-        }
+            body {
+                overflow-y: auto; /* Allow vertical scrolling */
+            }
+            .logo-video {
+                position: relative;
+                width: 60%;
+                height: auto;
+                top: 10%; /* Move the logo further down */
+                left: 20%;
+                transform: none;
+            }
+            .navbar-brand {
+                margin-left: -10%; /* Move the brand text to the left */
+            }
+            .login-signup-button {
+                top: auto;
+                bottom: 5%; /* Position buttons even closer to the footer */
+            }
+            footer {
+                position: relative;
+                background-color: rgba(0, 0, 0, 0.8);
+                margin-top: 5%; /* Add some space above the footer */
+            }
+        }                            
     </style>
 </head>
 <body>
