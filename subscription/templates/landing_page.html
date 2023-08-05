@@ -26,6 +26,7 @@
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
+            z-index: 1000; /* Ensure this is higher than the footer's z-index */
         }
         .logo-video {
             position: fixed;
@@ -57,6 +58,7 @@
             color: white;
             text-align: center;
             padding: 10px;
+            z-index: 999; /* Ensure this is lower than the buttons' z-index */
         }
         .follow-us-links {
             position: absolute;
