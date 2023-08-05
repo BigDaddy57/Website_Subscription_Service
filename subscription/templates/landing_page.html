@@ -26,7 +26,7 @@
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
-            z-index: 1000; /* Ensure this is higher than the footer's z-index */
+            z-index: 1000;
         }
         .logo-video {
             position: fixed;
@@ -58,7 +58,7 @@
             color: white;
             text-align: center;
             padding: 10px;
-            z-index: 999; /* Ensure this is lower than the buttons' z-index */
+            z-index: 999;
         }
         .follow-us-links {
             position: absolute;
@@ -127,6 +127,22 @@
             }
             .btn-social {
                 margin: 5px 0;
+            }
+        }
+
+        /* Landscape mode adjustments */
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .login-signup-button {
+                top: 40%; /* Reposition buttons closer to the middle */
+            }
+
+            .logo-video {
+                width: 100%;
+                height: auto; /* Adjust video height */
+            }
+
+            footer {
+                display: none; /* Hide the footer in landscape mode */
             }
         }
     </style>
