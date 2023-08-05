@@ -416,7 +416,28 @@
         }        
           #container {
             perspective: 1000px;
-          }          
+          }  
+    /* Media query for mobile screens */
+    @media (max-width: 768px) {
+            /* Adjust the dropdown menu's position */
+            .navbar .dropdown-menu {
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                top: 100%;
+                min-width: 200px;
+            }
+            /* Adjust the dropdown item's behavior */
+            .navbar .dropdown-item {
+                text-align: center;
+                transition: background-color 0.3s ease;
+            }
+            /* Adjust the dropdown item's hover behavior */
+            .navbar .dropdown-item:hover {
+                background-color: var(--secondary-color);
+                color: var(--light-color);
+            }
+        }        
     </style>
 </head>
 <body>
