@@ -130,22 +130,29 @@
             }
         }
 
-        /* Landscape mode adjustments */
-        @media screen and (max-width: 768px) and (orientation: landscape) {
-            .logo-video {
-                width: 60%; /* Reduce the width of the video */
-                height: auto; /* Adjust video height */
-                top: 20%; /* Reposition the video to be more centered */
-            }
+    /* Landscape mode adjustments */
+    @media screen and (max-width: 768px) and (orientation: landscape) {
+        body {
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+        .logo-video {
+            position: relative; /* Reset to default positioning */
+            width: 80%; /* Adjust width to fit within viewport */
+            height: auto;
+            top: 10%; /* Provide some top spacing */
+            left: 10%; /* Center the video */
+            transform: none; /* Remove transformations */
+        }
+        .login-signup-button {
+            top: auto; /* Reset to default positioning */
+            bottom: 20%; /* Position buttons above the footer */
+        }
+        footer {
+            position: relative; /* Reset to default positioning */
+            background-color: rgba(0, 0, 0, 0.8); /* Make the footer slightly more opaque */
+        }
+}
 
-            .login-signup-button {
-                top: 60%; /* Position buttons below the logo */
-            }
-
-            footer {
-                display: block; /* Display the footer */
-                background-color: rgba(0, 0, 0, 0.8); /* Make the footer slightly more opaque */
-            }
         }
     </style>
 </head>
